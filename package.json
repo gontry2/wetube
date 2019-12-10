@@ -9,11 +9,11 @@
         "@babel/polyfill": "^7.6.0",
         "@babel/preset-env": "^7.6.2",
         "autoprefixer": "^9.7.2",
+        "axios": "^0.19.0",
         "babel-loader": "^8.0.6",
         "body-parser": "^1.19.0",
         "connect-mongo": "^3.1.0",
         "cookie-parser": "^1.4.4",
-        "cross-env": "^6.0.3",
         "css-loader": "^3.2.0",
         "dotenv": "^8.1.0",
         "express": "^4.17.1",
@@ -36,10 +36,11 @@
     },
     "scripts": {
         "dev:server": "nodemon --exec babel-node init.js --delay 2 --ignore '.scss' --ignore 'static'",
-        "dev:assets": "WEBPACK_ENV=development webpack -w",
+        "dev:assets": "cross-env WEBPACK_ENV=development webpack -w",
         "build:assets": "WEBPACK_ENV=production webpack"
     },
     "devDependencies": {
+        "cross-env": "^6.0.3",
         "eslint": "^6.5.1",
         "eslint-config-airbnb-base": "^14.0.0",
         "eslint-config-prettier": "^6.4.0",
