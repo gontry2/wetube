@@ -153,3 +153,22 @@ export const postAddComment = async(req, res) => {
         res.end();
     }
 };
+
+// delete comment
+export const postDeleteComment = async(req, res) => {
+    const {
+        params: { id: commentId },
+        body: { videoId }
+    } = req;
+    let commentList = [];
+    try {
+        const video = await Video.findById(videoId);
+        Comment.findOneAndDelete(commentId);
+        video.comments.pull(commentId);
+        video.save();
+    } catch (error) {
+        res.status(400);
+    } finally {
+        res.end();
+    }
+};

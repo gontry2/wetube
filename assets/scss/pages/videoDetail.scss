@@ -34,19 +34,28 @@
     }
     .video__comments {
         margin-top: 25px;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .video__comment-number {
             font-size: 18px;
         }
         .add_comment {
             margin-top: 25px;
             width: 100%;
+            max-width: 300px;
             input {
                 width: 100%
             }
         }
         .video__comments-list {
             margin-top: 50px;
+            width: 100%;
+            max-width: 300px;
             li {
+                width: 100%;
                 background-color: #3498db;
                 color: white;
                 padding: 15px;
@@ -54,6 +63,13 @@
                 border-bottom-left-radius: 0px;
                 &:not(:last-child) {
                     margin-bottom: 15px
+                }
+                span {
+                    margin-right: 10px;
+                }
+                button {
+                    padding: 0;
+                    max-width: 13px;
                 }
             }
         }
